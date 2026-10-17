@@ -18,8 +18,24 @@ async function pegarNoticias(): Promise<void> {
             pubDate: item.pubDate
         }));
         
+        const dataHoje = new Date()
+
         const noticiasFiltradas = noticias.filter(noticia => {
-        return new Date(noticia.pubDate) >= new Date();
+            const dataNoticia = new Date(noticia.pubDate);
+            const hojeOuOntem: boolean =
+                dataHoje.getDate() === dataNoticia.getDate() ||
+                (dataHoje.getDate() === 1 && dataNoticia.getDate() === 31) ||
+                dataHoje.getDate() - 1 === dataNoticia.getDate()
+
+            const ontemApos18h: boolean = 
+                hojeOuOntem &&
+                (dataNoticia.getHours() > 18 ||
+                dataNoticia.getMinutes() > 0)
+
+            if(hojeOuOntem || ontemApos18h){
+                return noticia
+            }
+
         });
 
     if (noticiasFiltradas.length === 0){
