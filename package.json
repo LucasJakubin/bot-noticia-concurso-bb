@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsx --env-file=.env src/main.ts"
-    
+    "start": "tsx --env-file=.env src/pegarNoticias.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@types/node": "^26.6.5",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "^0.9.12",
+    "fast-xml-parser": "^5.11.2"
   }
 }
