@@ -6,7 +6,7 @@ A função do Bot é enviar notícias sobre o concurso do Banco do Brasil diaria
 
 R1	Buscar notícias sobre o concurso do Banco do Brasil
 R2	Verificar uma vez por dia, funcionando com o computador desligado
-R3	Enviar título, link e resumo da própria fonte
+R3	Enviar título, link
 R4	Nunca enviar o mesmo link duas vezes (notícias diferentes sobre o mesmo assunto podem ser enviadas)
 R5	Na primeira execução, só registrar as notícias existentes, sem enviar
 R6	Avisar no Telegram se algo der errado
