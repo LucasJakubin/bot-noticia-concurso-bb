@@ -1,0 +1,22 @@
+name: Bot do concurso
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  "15 00 * * *"
+jobs:
+  enviar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+
+      - run: npm ci
+
+      - run: npx tsx src/pegarNoticias.ts
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
