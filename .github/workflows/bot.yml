@@ -3,7 +3,7 @@ name: Bot do concurso
 on:
   workflow_dispatch:
   schedule:
-    - cron:  "55 23 * * *"
+    - cron:  "00 21 * * *"
 jobs:
   enviar:
     runs-on: ubuntu-latest
